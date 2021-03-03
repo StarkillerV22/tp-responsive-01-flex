@@ -1,0 +1,150 @@
+@import "reset";
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+@mixin landscape {
+    @media (min-aspect-ratio: 1/1) {
+        @content;
+    }
+}
+
+.card {
+    background-color: #9acd32;
+    border: solid 10px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient( 90deg, rgba(255, 222, 0, 1) 0%, rgb(148, 144, 22) 100%);
+    @include landscape {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+}
+
+.card__top {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include landscape {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.card__top__left__evol>p {
+    font-size: 12px;
+}
+
+.card__top__left__name>p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card__top__right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.card__top__right__PV {
+    color: #f74600;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.card__middle {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__middle__top {
+    display: flex;
+    flex-direction: column;
+    @include landscape {
+        order: -5;
+    }
+}
+
+.card__middle__top__picture>img {
+    border: #f3e200 5px solid;
+}
+
+// .card__middle__top__picture {
+// }
+.card__middle__top__desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f3e200;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__middle__top__desc__text {
+    font-size: 15px;
+}
+
+.card__middle__bottom {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__middle__bottom__attack:first-child {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.card__middle__bottom__attack:nth-child(2) p {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+b {
+    font-weight: bold;
+}
+
+.card__middle__bottom__attack:last-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card__bottom__top {
+    border-top: black 1px solid;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card__bottom__top div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card__bottom__top__resist p {
+    margin-top: -20px;
+}
+
+.card__bottom__bottom {
+    margin-top: 68px;
+}
